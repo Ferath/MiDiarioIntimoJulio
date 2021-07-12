@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="ProyectoProgramacion.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" type="image/ico" href="Assets/Icon/favicon.ico">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container">
+        <form id="form1" runat="server">
+            <div>
+                <nav class="navbar navbar-light p-3" style="background-color: #e5c6ee; font-family:Arial; text-decoration:none; color:chartreuse;">
+                    <asp:Menu CssClass="navbar navbar-fixed-top"
+                          StaticMenuStyle-CssClass= "nav"
+                          StaticSelectedStyle-CssClass="active"
+                          DynamicMenuStyle-CssClass="dropdown-menu" runat="server" DisappearAfter="1000" Orientation="Horizontal" StaticDisplayLevels="1">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Index.aspx" Text="Index"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Noticias.aspx" Text="Noticias"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Donaciones.aspx" Text="Donar"></asp:MenuItem>
+                            <asp:MenuItem Text="Sitios de interés">
+                                <asp:MenuItem Text="Información">
+                                    <asp:MenuItem NavigateUrl="http://www.google.com" Text="Pagina1"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://www.wikipedia.org" Text="Pagina2"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Estudio">
+                                    <asp:MenuItem NavigateUrl="http://www.inacap.cl" Text="Pagina3"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Login.aspx" Text="IniciarSesión"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </nav>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+    

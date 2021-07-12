@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminNav.Master.cs" Inherits="ProyectoProgramacion.Administrador" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-light p-3" style="background-color: #7dd3ef; font-family:Arial; text-decoration:none; color:chartreuse;">
+                    <asp:Menu CssClass="navbar navbar-fixed-top"
+                          StaticMenuStyle-CssClass= "nav"
+                          StaticSelectedStyle-CssClass="active"
+                          DynamicMenuStyle-CssClass="dropdown-menu" runat="server" DisappearAfter="1000" Orientation="Horizontal" StaticDisplayLevels="1">
+                        <Items>
+                        <asp:MenuItem NavigateUrl="~/Index.aspx" Text="Inicio"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/IndexAdmin.aspx" Text="Inicio ADMIN"></asp:MenuItem>
+                        <asp:MenuItem Text="Edicion">
+                            <asp:MenuItem Text="Información">
+                                <asp:MenuItem NavigateUrl="~/CosasAdmin/DelBuscarNoticia.aspx" Text="Editar las noticias"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/CosasAdmin/CrearNoticia.aspx" Text="Subir una noticia"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Donaciones">
+                                 <asp:MenuItem NavigateUrl="~/CosasAdmin/ListaDonacion.aspx" Text="Revisar donaciones"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
