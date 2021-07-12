@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Subiendo noticias" Language="C#" MasterPageFile="~/Administrador.Master" AutoEventWireup="true" CodeBehind="CrearNoticia.aspx.cs" Inherits="ProyectoProgramacion.Admin.CrearNoticia" %>
+﻿<%@ Page Title="Subiendo noticias" Language="C#" MasterPageFile="~/AdminNav.Master" AutoEventWireup="true" CodeBehind="CrearNoticia.aspx.cs" Inherits="ProyectoProgramacion.Admin.CrearNoticia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

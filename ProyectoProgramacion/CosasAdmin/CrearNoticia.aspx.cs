@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ProyectoProgramacion.Controladores;
+using ProyectoProgramacion.Modelo;
 
 
 namespace ProyectoProgramacion.Admin
@@ -13,11 +14,34 @@ namespace ProyectoProgramacion.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            validarLogin();
             if (!IsPostBack)
             {
                 CargarDrp();
             };
             
+        }
+        public void validarLogin()
+        {
+
+            //Método de validación de Session.
+            if (Session["administrador1"] == null)
+            {
+                Session["error"] = "Debe iniciar sesión";
+                Response.Redirect("../login.aspx");
+            }
+
+            administrador administrador1 = (administrador)Session["administrador1"];
+            //Método validación de Rol
+            if (administrador1.rol.id_rol == 1)
+            {
+            }
+            else
+            {
+                Session["error"] = "Privilegios insuficientes.";
+                Response.Redirect("../login.aspx");
+            }
+
         }
         // Cargando el Dropdown de los autores registrados
         public void CargarDrp()

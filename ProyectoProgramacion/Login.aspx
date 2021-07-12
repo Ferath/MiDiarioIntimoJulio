@@ -10,12 +10,14 @@
                 <td class="auto-style2">Usuario:</td>
                 <td class="auto-style4">
                     <asp:TextBox ID="TxtUsuario" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="TxtUsuario" runat="server" ErrorMessage="Debe ingresar un dato" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Password:</td>
                 <td class="auto-style4">
                     <asp:TextBox ID="TxtPassword"  runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="TxtUsuario" runat="server" ErrorMessage="Debe ingresar un dato" ForeColor="Red"></asp:RequiredFieldValidator>                    
                 </td>
             </tr>
             <tr>

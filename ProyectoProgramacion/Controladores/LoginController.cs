@@ -11,7 +11,7 @@ namespace ProyectoProgramacion.Controladores
     {
         // Conexion a la BDLocal
         private static MiDiarioIntimoBDEntities cnx = new MiDiarioIntimoBDEntities();
-
+        
         public static administrador login(string nombre, string password)
         {
 

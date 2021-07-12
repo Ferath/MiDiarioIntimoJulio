@@ -4,6 +4,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <asp:LinkButton ID="LnkUser" runat="server">LinkButton</asp:LinkButton>
-    El gran jefe
 
 </asp:Content>
