@@ -12,12 +12,12 @@ namespace ProyectoProgramacion.Controladores
         // Conexion a la BDLocal
         private static MiDiarioIntimoBDEntities cnx = new MiDiarioIntimoBDEntities();
         
-        public static administrador login(string nombre, string password)
+        public static administrador login(string rut, string password)
         {
 
             foreach (administrador administrador1 in UsuarioController.GetAll())
             {
-                if (administrador1.nombre.Equals(nombre))
+                if (administrador1.rut.Equals(rut))
                 {
                     if (administrador1.password.Equals(password))
                     {

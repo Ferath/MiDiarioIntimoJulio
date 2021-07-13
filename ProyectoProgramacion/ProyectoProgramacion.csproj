@@ -76,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CosasAdmin\AgregarAutor.aspx" />
     <Content Include="IndexAdmin.aspx" />
     <Content Include="CosasAdmin\CrearNoticia.aspx" />
     <Content Include="CosasAdmin\DelBuscarNoticia.aspx" />
@@ -105,6 +106,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CosasAdmin\AgregarAutor.aspx.cs">
+      <DependentUpon>AgregarAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CosasAdmin\AgregarAutor.aspx.designer.cs">
+      <DependentUpon>AgregarAutor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="IndexAdmin.aspx.cs">
       <DependentUpon>IndexAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

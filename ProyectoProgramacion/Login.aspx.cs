@@ -24,7 +24,7 @@ namespace ProyectoProgramacion.Modelo
         }
         protected void BrnLogin_Click(object sender, EventArgs e)
         {
-            administrador administrador1 = LoginController.login(TxtUsuario.Text, TxtPassword.Text);
+            administrador administrador1 = LoginController.login(TxtRut.Text, TxtPassword.Text);
             if (administrador1 != null)
             {
                 Session["administrador1"] = administrador1;

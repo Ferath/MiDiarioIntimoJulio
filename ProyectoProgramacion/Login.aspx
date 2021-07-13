@@ -7,17 +7,17 @@
                 <td class="auto-style3" colspan="2"><strong><em>Login</em></strong></td>
             </tr>
             <tr>
-                <td class="auto-style2">Usuario:</td>
+                <td class="auto-style2">Rut:</td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="TxtUsuario" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="TxtUsuario" runat="server" ErrorMessage="Debe ingresar un dato" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="TxtRut" MaxLength="10" runat="server"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Formato invalido, use el siguiente 'xxxxxxxx-(0-9 o K)'" ForeColor="red" ControlToValidate="TxtRut" ValidationExpression="^[0-9]{8,9}[-|‐]{1}[0-9kK]{1}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Password:</td>
                 <td class="auto-style4">
                     <asp:TextBox ID="TxtPassword"  runat="server" TextMode="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="TxtUsuario" runat="server" ErrorMessage="Debe ingresar un dato" ForeColor="Red"></asp:RequiredFieldValidator>                    
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="TxtPassword" runat="server" ErrorMessage="Debe ingresar un dato" ForeColor="Red"></asp:RequiredFieldValidator>                    
                 </td>
             </tr>
             <tr>

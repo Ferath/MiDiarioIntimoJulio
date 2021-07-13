@@ -21,7 +21,8 @@
                     <tr>
                         <td class="auto-style8">Autor:</td>
                         <td class="auto-style9">
-                            <asp:DropDownList ID="DrpAutor" class="btn btn-dark dropdown-toggle" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="DrpAutor" class="btn btn-dark dropdown-toggle" runat="server"></asp:DropDownList><br />
+                            <asp:Button ID="Button1" CssClass="btn-light" runat="server" Text="Agregar autor" OnClick="Button1_Click" />
                         </td>
                         <td class="auto-style10"></td>
                     </tr>

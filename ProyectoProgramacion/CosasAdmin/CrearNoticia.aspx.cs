@@ -69,5 +69,10 @@ namespace ProyectoProgramacion.Admin
             TxtFechaMostrar.Text = DateTime.Now.ToShortDateString();
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarAutor.aspx");
+        }
     }
 }
