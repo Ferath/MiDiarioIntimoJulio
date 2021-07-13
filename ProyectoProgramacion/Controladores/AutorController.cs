@@ -31,17 +31,19 @@ namespace ProyectoProgramacion.Controladores
             cnx.SaveChanges();
             return "Autor agregado";
         }
+        // Buscar
         public static Autor FindAutor(string id)
         {
             return cnx.Autor.Find(int.Parse(id));
         }
-        public static string EditAutor(string idAutor )
+        // Editar
+        public static string EditAutor(string id, string nombre, string apellido, string rut)
         {
-            Autor autor = cnx.Autor.Find(int.Parse(idAutor));
-
+            Autor autor1 = cnx.Autor.Find(int.Parse(id));
+            autor1.nombre = nombre;
+            autor1.apellido = apellido;
             cnx.SaveChanges();
-
-            return "Donacion modificada";
+            return "Autor modificado";
         }
 
         // Eliminar Autor
