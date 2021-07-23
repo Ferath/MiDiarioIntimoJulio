@@ -24,11 +24,11 @@ namespace ProyectoProgramacion
                                             {
                                                 Titulo = n.titulo_noticia,
                                                 Fecha = n.fecha_noticia.ToShortDateString(),
-                                                Autor = n.Autor1.nombre+" "+n.Autor1.apellido,
+                                                Autor = n.Autor1.Persona.nombre + " " + n.Autor1.Persona.apellido,
                                                 Descripcion = n.descripcion_noticia
                                             };
             GrdListadoNoticias.DataBind();
         }
-        
+
     }
 }

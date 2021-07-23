@@ -17,13 +17,13 @@ namespace ProyectoProgramacion.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public rol()
         {
-            this.administrador = new HashSet<administrador>();
+            this.Administradores = new HashSet<Administradores>();
         }
     
         public int id_rol { get; set; }
         public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<administrador> administrador { get; set; }
+        public virtual ICollection<Administradores> Administradores { get; set; }
     }
 }

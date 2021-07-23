@@ -25,12 +25,12 @@ namespace ProyectoProgramacion.Modelo
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<administrador> administrador { get; set; }
+        public virtual DbSet<Administradores> Administradores { get; set; }
         public virtual DbSet<Autor> Autor { get; set; }
         public virtual DbSet<Donacion> Donacion { get; set; }
-        public virtual DbSet<ImagenNoticia> ImagenNoticia { get; set; }
         public virtual DbSet<Metodopago> Metodopago { get; set; }
         public virtual DbSet<Noticia> Noticia { get; set; }
+        public virtual DbSet<Persona> Persona { get; set; }
         public virtual DbSet<rol> rol { get; set; }
     }
 }

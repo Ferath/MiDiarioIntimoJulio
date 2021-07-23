@@ -24,15 +24,15 @@ namespace ProyectoProgramacion.Admin
         {
 
             //Método de validación de Session.
-            if (Session["administrador1"] == null)
+            if (Session["administradores"] == null)
             {
                 Session["error"] = "Debe iniciar sesión";
                 Response.Redirect("../login.aspx");
             }
 
-            administrador administrador1 = (administrador)Session["administrador1"];
+            Administradores administradores = (Administradores)Session["administradores"];
             //Método validación de Rol
-            if (administrador1.rol.id_rol == 1)
+            if (administradores.rol.id_rol == 1)
             {
             }
             else
@@ -50,7 +50,7 @@ namespace ProyectoProgramacion.Admin
                                                 ID = n.id,
                                                 Titulo = n.titulo_noticia,
                                                 Fecha = n.fecha_noticia.ToShortDateString(),
-                                                Autor = n.Autor1.nombre + " " + n.Autor1.apellido,
+                                                Autor = n.Autor1.Persona.nombre + " " + n.Autor1.Persona.apellido,
                                             };
             GrdNoticias.DataBind();
         }

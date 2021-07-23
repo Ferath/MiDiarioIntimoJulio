@@ -19,17 +19,17 @@ namespace ProyectoProgramacion
         {
 
             //Método de validación de Session.
-            if (Session["administrador1"] == null)
+            if (Session["administradores"] == null)
             {
                 Session["error"] = "Debe iniciar sesión";
                 Response.Redirect("login.aspx");
             }
 
-            administrador administrador1 = (administrador)Session["administrador1"];
+            Administradores administradores = (Administradores)Session["administradores"];
             //Método validación de Rol
-            if (administrador1.rol.id_rol == 1)
+            if (administradores.rol.id_rol == 1)
             {
-                LnkUser.Text = administrador1.nombre+ " " + administrador1.apellido + " (" + administrador1.rol.nombre + ")";
+                LnkUser.Text = administradores.Persona.nombre+ " " + administradores.Persona.apellido + " (" + administradores.rol.nombre + ")" + " ( Su RUT es" + administradores.Persona.rut + ")";
             }
             else
             {

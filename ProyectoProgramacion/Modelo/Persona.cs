@@ -12,19 +12,23 @@ namespace ProyectoProgramacion.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Autor
+    public partial class Persona
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Autor()
+        public Persona()
         {
-            this.Noticia = new HashSet<Noticia>();
+            this.Administradores = new HashSet<Administradores>();
+            this.Autor = new HashSet<Autor>();
         }
     
-        public int id { get; set; }
-        public int Fk_Persona { get; set; }
+        public int id_persona { get; set; }
+        public string rut { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Noticia> Noticia { get; set; }
-        public virtual Persona Persona { get; set; }
+        public virtual ICollection<Administradores> Administradores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Autor> Autor { get; set; }
     }
 }

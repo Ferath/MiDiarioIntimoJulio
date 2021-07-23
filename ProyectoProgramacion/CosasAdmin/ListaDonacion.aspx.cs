@@ -13,7 +13,7 @@ namespace ProyectoProgramacion.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            validarLogin();
+            ValidarLogin();
             if (!IsPostBack)
             {
                 
@@ -21,19 +21,19 @@ namespace ProyectoProgramacion.Admin
             };
         }
 
-        public void validarLogin()
+        public void ValidarLogin()
         {
 
             //Método de validación de Session.
-            if (Session["administrador1"] == null)
+            if (Session["administradores"] == null)
             {
                 Session["error"] = "Debe iniciar sesión";
                 Response.Redirect("../login.aspx");
             }
 
-            administrador administrador1 = (administrador)Session["administrador1"];
+            Administradores administradores = (Administradores)Session["administradores"];
             //Método validación de Rol
-            if (administrador1.rol.id_rol == 1)
+            if (administradores.rol.id_rol == 1)
             {
             }
             else

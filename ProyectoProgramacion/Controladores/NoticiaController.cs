@@ -13,21 +13,22 @@ namespace ProyectoProgramacion.Controladores
 
         // Metodos de clase
         //Agregar
-        public static string AddNoticia(string titulo_noticia, string fecha_noticia, string FK_autor, string descripcion_noticia)
+        public static string AddNoticia(string titulo_noticia, string fecha_noticia, string id, string descripcion_noticia)
         {
+            Autor autor = cnx.Autor.Find(int.Parse(id));
 
             Noticia noticia = new Noticia()
             {
                 titulo_noticia = titulo_noticia,
                 fecha_noticia = DateTime.Parse(fecha_noticia),
-                autor = int.Parse(FK_autor),
+                autor = int.Parse(id),
                 descripcion_noticia = descripcion_noticia,
 
             };
 
             cnx.Noticia.Add(noticia);
             cnx.SaveChanges();
-            return "Noticia realizada realizada";
+            return "Noticia realizada";
         }
 
         // Buscar
@@ -37,7 +38,7 @@ namespace ProyectoProgramacion.Controladores
         }
 
         // Modificar
-        public static string Editdonacion(string idNoticia, string idAutor)
+        public static string EditNoticia(string idNoticia, string idAutor)
         {
             Autor autor = cnx.Autor.Find(int.Parse(idAutor));
             Noticia noticia = cnx.Noticia.Find(int.Parse(idNoticia));
@@ -48,7 +49,7 @@ namespace ProyectoProgramacion.Controladores
             return "Noticia modificada";
         }
 
-        // Eliminar Donacion
+        // Eliminar Noticia
         public static string RemoveNoticia(string id)
         {
             Noticia noticia = cnx.Noticia.Find(int.Parse(id));

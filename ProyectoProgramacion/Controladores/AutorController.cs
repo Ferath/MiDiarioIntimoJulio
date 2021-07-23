@@ -18,18 +18,18 @@ namespace ProyectoProgramacion.Controladores
             return autor.ToList();
         }
 
-        public static string AddAutor(string nombre, string apellido, string rut)
+        public static string AddAutor(string id)
         {
-            Autor autor1 = new Autor()
+            Persona persona = cnx.Persona.Find(int.Parse(id));
+
+            Autor autor = new Autor()
             {
-                nombre = nombre,
-                apellido = apellido,
-                rut = rut
+                Fk_Persona = int.Parse(id),
             };
 
-            cnx.Autor.Add(autor1);
+            cnx.Autor.Add(autor);
             cnx.SaveChanges();
-            return "Autor agregado";
+            return "Autor creado";
         }
         // Buscar
         public static Autor FindAutor(string id)
@@ -40,8 +40,9 @@ namespace ProyectoProgramacion.Controladores
         public static string EditAutor(string id, string nombre, string apellido, string rut)
         {
             Autor autor1 = cnx.Autor.Find(int.Parse(id));
-            autor1.nombre = nombre;
-            autor1.apellido = apellido;
+            autor1.Persona.rut = rut;
+            autor1.Persona.nombre = nombre;
+            autor1.Persona.apellido = apellido;
             cnx.SaveChanges();
             return "Autor modificado";
         }
@@ -52,7 +53,7 @@ namespace ProyectoProgramacion.Controladores
             Autor autor = cnx.Autor.Find(int.Parse(id));
             cnx.Autor.Remove(autor);
 
-            return "Donacion eliminada";
+            return "Autor eliminado";
         }
     }
 }

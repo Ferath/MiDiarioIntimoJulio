@@ -34,7 +34,7 @@ namespace ProyectoProgramacion.Controladores
             return cnx.Donacion.Find(int.Parse(id));
         }
 
-        // Modificar
+        // No es legal o etico modificar donaciones, pero queda el codigo
         public static string Editdonacion(string idDonacion, string idMetodoPago)
         {
             Metodopago metodopago = cnx.Metodopago.Find(int.Parse(idMetodoPago));
@@ -46,7 +46,7 @@ namespace ProyectoProgramacion.Controladores
             return "Donacion modificada";
         }
 
-        // Eliminar Donacion
+        // No esta bien manipular donaciones de ningun tipo, pero queda el Eliminar Donacion
         public static string RemoveDonacion(string id)
         {
             Donacion donacion = cnx.Donacion.Find(int.Parse(id));

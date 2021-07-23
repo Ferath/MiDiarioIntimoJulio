@@ -14,12 +14,6 @@ namespace ProyectoProgramacion.Modelo
     
     public partial class Noticia
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Noticia()
-        {
-            this.ImagenNoticia = new HashSet<ImagenNoticia>();
-        }
-    
         public int id { get; set; }
         public string titulo_noticia { get; set; }
         public System.DateTime fecha_noticia { get; set; }
@@ -27,7 +21,5 @@ namespace ProyectoProgramacion.Modelo
         public string descripcion_noticia { get; set; }
     
         public virtual Autor Autor1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImagenNoticia> ImagenNoticia { get; set; }
     }
 }

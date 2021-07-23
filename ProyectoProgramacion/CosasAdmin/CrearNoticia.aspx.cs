@@ -14,7 +14,6 @@ namespace ProyectoProgramacion.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            validarLogin();
             if (!IsPostBack)
             {
                 CargarDrp();
@@ -25,15 +24,15 @@ namespace ProyectoProgramacion.Admin
         {
 
             //Método de validación de Session.
-            if (Session["administrador1"] == null)
+            if (Session["administradores"] == null)
             {
                 Session["error"] = "Debe iniciar sesión";
                 Response.Redirect("../login.aspx");
             }
 
-            administrador administrador1 = (administrador)Session["administrador1"];
+            Administradores administradores = (Administradores)Session["administradores"];
             //Método validación de Rol
-            if (administrador1.rol.id_rol == 1)
+            if (administradores.rol.id_rol == 1)
             {
             }
             else
@@ -50,7 +49,7 @@ namespace ProyectoProgramacion.Admin
             DrpAutor.DataSource = from p in AutorController.GetAll()
                                     select new
                                     {
-                                        nombre = p.nombre + " " + p.apellido,
+                                        nombre = p.Persona.nombre + " " + p.Persona.apellido,
                                         id = p.id
                                     };
             DrpAutor.DataValueField = "id";

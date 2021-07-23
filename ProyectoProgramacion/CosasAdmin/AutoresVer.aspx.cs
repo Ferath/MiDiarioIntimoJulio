@@ -33,9 +33,9 @@ namespace ProyectoProgramacion.CosasAdmin
 
                 Hdnid.Value = autor.id.ToString();//Valor oculto
 
-                TxtRut.Text = autor.rut;
-                TxtNombre.Text = autor.nombre;
-                TxtApellido.Text = autor.apellido;
+                TxtRut.Text = autor.Persona.rut;
+                TxtNombre.Text = autor.Persona.nombre;
+                TxtApellido.Text = autor.Persona.apellido;
 
                 Session["aut"] = autor;
 

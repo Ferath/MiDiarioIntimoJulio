@@ -76,16 +76,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Testeo5.mdf" />
+    <Content Include="App_Data\Testeo5_log.ldf">
+      <DependentUpon>Testeo5.mdf</DependentUpon>
+    </Content>
     <Content Include="CosasAdmin\AgregarAutor.aspx" />
     <Content Include="CosasAdmin\AutoresVer.aspx" />
     <Content Include="IndexAdmin.aspx" />
     <Content Include="CosasAdmin\CrearNoticia.aspx" />
     <Content Include="CosasAdmin\DelBuscarNoticia.aspx" />
     <Content Include="CosasAdmin\ListaDonacion.aspx" />
-    <Content Include="App_Data\MiDiarioIntimoBD.mdf" />
-    <Content Include="App_Data\MiDiarioIntimoBD_log.ldf">
-      <DependentUpon>MiDiarioIntimoBD.mdf</DependentUpon>
-    </Content>
     <Content Include="Assets\Icon\gifcarga.gif" />
     <Content Include="Assets\Icon\Loading.gif" />
     <Content Include="Assets\Icon\favicon.ico" />
@@ -107,6 +107,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\PersonaController.cs" />
     <Compile Include="CosasAdmin\AgregarAutor.aspx.cs">
       <DependentUpon>AgregarAutor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,7 +177,14 @@
     <Compile Include="Donaciones.aspx.designer.cs">
       <DependentUpon>Donaciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\administrador.cs">
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Administradores.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Autor.cs">
@@ -184,16 +192,6 @@
     </Compile>
     <Compile Include="Modelo\Donacion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\ImagenNoticia.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Metodopago.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -214,6 +212,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Noticia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Persona.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\rol.cs">
@@ -256,6 +257,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

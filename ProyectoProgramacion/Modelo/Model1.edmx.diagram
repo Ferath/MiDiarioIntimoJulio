@@ -4,18 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fea81b90f5c44e14801348de7f4cf917" Name="Diagram1">
-        <EntityTypeShape EntityType="MiDiarioIntimoBDModel.administrador" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MiDiarioIntimoBDModel.Autor" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MiDiarioIntimoBDModel.Donacion" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MiDiarioIntimoBDModel.ImagenNoticia" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MiDiarioIntimoBDModel.Metodopago" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MiDiarioIntimoBDModel.Noticia" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MiDiarioIntimoBDModel.rol" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <AssociationConnector Association="MiDiarioIntimoBDModel.Fk_RolUsuario" ManuallyRouted="false" />
-        <AssociationConnector Association="MiDiarioIntimoBDModel.FK_autor" ManuallyRouted="false" />
-        <AssociationConnector Association="MiDiarioIntimoBDModel.FK_metodopago" ManuallyRouted="false" />
-        <AssociationConnector Association="MiDiarioIntimoBDModel.FK_noticia" ManuallyRouted="false" />
+      <Diagram DiagramId="8afcf91b9f8b492896a8ebf6766672c8" Name="Diagram1">
+        <EntityTypeShape EntityType="Testeo5Model.Administradores" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Testeo5Model.Autor" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Testeo5Model.Donacion" Width="1.5" PointX="8" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Testeo5Model.Metodopago" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Testeo5Model.Noticia" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Testeo5Model.Persona" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Testeo5Model.rol" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Testeo5Model.Fk_administrador" ManuallyRouted="false" />
+        <AssociationConnector Association="Testeo5Model.Fk_RolUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Testeo5Model.FK_autor" ManuallyRouted="false" />
+        <AssociationConnector Association="Testeo5Model.Fk_idpersona" ManuallyRouted="false" />
+        <AssociationConnector Association="Testeo5Model.FK_metodopago" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

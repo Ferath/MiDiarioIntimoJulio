@@ -13,11 +13,11 @@ namespace ProyectoProgramacion.Controladores
 
 
         // Obtener lista de administradores
-        public static List<administrador> GetAll()
+        public static List<Administradores> GetAll()
         {
-            var administrador1 = from m in cnx.administrador
-                                select m;
-            return administrador1.ToList();
+            var administradores = from ad in cnx.Administradores
+                                 select ad;
+            return administradores.ToList();
         }
 
 

@@ -24,10 +24,10 @@ namespace ProyectoProgramacion.Modelo
         }
         protected void BrnLogin_Click(object sender, EventArgs e)
         {
-            administrador administrador1 = LoginController.login(TxtRut.Text, TxtPassword.Text);
-            if (administrador1 != null)
+            Administradores administradores = LoginController.login(TxtRut.Text, TxtPassword.Text);
+            if (administradores != null)
             {
-                Session["administrador1"] = administrador1;
+                Session["administradores"] = administradores;
                 Response.Redirect("IndexAdmin.aspx");
             }
             else

@@ -14,21 +14,24 @@ namespace ProyectoProgramacion.CosasAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            validarLogin();
+            if (!IsPostBack)
+            {
+                CargarDrp();
+            };
         }
         public void validarLogin()
         {
 
             //Método de validación de Session.
-            if (Session["administrador1"] == null)
+            if (Session["administradores"] == null)
             {
                 Session["error"] = "Debe iniciar sesión";
                 Response.Redirect("../login.aspx");
             }
 
-            administrador administrador1 = (administrador)Session["administrador1"];
+            Administradores administradores = (Administradores)Session["administradores"];
             //Método validación de Rol
-            if (administrador1.rol.id_rol == 1)
+            if (administradores.rol_usuario == 1)
             {
             }
             else
@@ -38,13 +41,30 @@ namespace ProyectoProgramacion.CosasAdmin
             }
 
         }
-        // Creando una Noticia
+
+
+
+        // Cargando las personas creadas por el administrador
+        public void CargarDrp()
+        {
+
+            DrpPersonas.DataSource = from p in PersonaController.GetAllPersona()
+                                  select new
+                                  {
+                                      nombre = p.nombre + " " + p.apellido,
+                                      id_persona = p.id_persona
+                                  };
+            DrpPersonas.DataValueField = "id_persona";
+            DrpPersonas.DataTextField = "Nombre";
+            DrpPersonas.DataBind();
+        }
+
+        // Creando un autor
         protected void BtnBtnAgregarAutor_Click(object sender, EventArgs e)
         {
             System.Threading.Thread.Sleep(5000);
-            LbMensaje.Text = AutorController.AddAutor(TxtNombre.Text, TxtApellido.Text, TxtRut.Text);
+            LbMensaje.Text = AutorController.AddAutor(DrpPersonas.SelectedValue);
             Response.Redirect("CrearNoticia.aspx");
         }
-
     }
 }

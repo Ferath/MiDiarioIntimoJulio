@@ -12,15 +12,15 @@ namespace ProyectoProgramacion.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class administrador
+    public partial class Administradores
     {
         public int id_admin { get; set; }
-        public string rut { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
+        public string Username { get; set; }
+        public int Fk_personaid { get; set; }
         public string password { get; set; }
         public int rol_usuario { get; set; }
     
+        public virtual Persona Persona { get; set; }
         public virtual rol rol { get; set; }
     }
 }
