@@ -52,7 +52,7 @@ namespace ProyectoProgramacion.Controladores
         {
             Autor autor = cnx.Autor.Find(int.Parse(id));
             cnx.Autor.Remove(autor);
-
+            cnx.SaveChanges();
             return "Autor eliminado";
         }
     }

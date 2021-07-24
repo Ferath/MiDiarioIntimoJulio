@@ -28,6 +28,7 @@
                     <td class="auto-style1">Rut:</td>
                     <td class="auto-style1">
                         <asp:TextBox ID="TxtRut" Enabled="false" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Formato invalido, use el siguiente 'xxxxxxxx-(0-9 o K)'" ForeColor="red" ControlToValidate="TxtRut" ValidationExpression="^[0-9]{8,9}[-|‐]{1}[0-9kK]{1}$"></asp:RegularExpressionValidator>
                         <asp:Label ID="LbId" Hidden="true" runat="server" Text="Label"></asp:Label>
                     </td>
                 </tr>
@@ -39,7 +40,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">Apellido:</td>
-                    <td>
+                    <td class="auto-style2">
                         <asp:TextBox ID="TxtApellido" Enabled="false" runat="server"></asp:TextBox>
                     </td>
                     <tr>
@@ -47,7 +48,8 @@
                             <asp:LinkButton ID="LnkEditar" runat="server" OnClick="LnkEditar_Click">Modificar</asp:LinkButton>
                         </td>
                         <td>
-                            <asp:Button ID="BtnModificar" Visible="false" runat="server" Text="Modificar" OnClick="BtnModificar_Click" />
+                            <asp:Button ID="BtnModificar" CssClass="btn btn-light" Visible="false" runat="server" Text="Modificar" OnClick="BtnModificar_Click" />
+                            <asp:Button ID="BtnEliminarPersona" CssClass="btn btn-danger" OnClick="DelPersona" runat="server" Text="Eliminar Autor" />
                             <br />
                             <asp:Label ID="LbMensaje2" runat="server" Text=""></asp:Label>
                         </td>

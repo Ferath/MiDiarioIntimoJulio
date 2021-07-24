@@ -30,7 +30,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdateDonar" runat="server">
         <ContentTemplate>
-            <div class="position-absolute top-50 start-50 translate-middle">
+            <div class="donacionContainer" >
                 <table class="auto-style1">
                     <tr>
                         <td class="" colspan="3"><strong><em>Donar</em></strong></td>

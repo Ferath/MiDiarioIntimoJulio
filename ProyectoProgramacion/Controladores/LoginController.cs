@@ -19,7 +19,7 @@ namespace ProyectoProgramacion.Controladores
             {
                 if (administradores.Persona.rut.Equals(rut))
                 {
-                    if (administradores.password.Equals(password))
+                    if (administradores.password.Equals(Encrypt.GetMD5(password)))
                     {
                         return administradores;
                     }

@@ -1,1 +1,58 @@
-﻿
+﻿:root {
+    --Principal: #FFAFCC;
+    --Hovers: #FFEBF2;
+    --Texto: black;
+    --Fondo: #eee4e8;
+    --TextoBlanco: white;
+}
+
+body {
+    background-color: var(--Fondo);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--Principal);
+    color: var(--TextoBlanco);
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Los a del nav*/
+a.level1.static {
+    border: none;
+    color: var(--Texto);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+a.popout.level2 {
+    color: var(--Texto)
+}
+
+a.level3 {
+    color: var(--Texto)
+}
+
+a:hover {
+    background-color: var(--Hovers);
+    color: black;
+    border-radius: 5px;
+}
+
+/*Contenedor del div de donaciones*/
+.donacionContainer {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 10%;
+}

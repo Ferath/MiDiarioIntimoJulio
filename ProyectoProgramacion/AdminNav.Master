@@ -24,13 +24,16 @@
                         <asp:MenuItem NavigateUrl="~/IndexAdmin.aspx" Text="Admin"></asp:MenuItem>
                         <asp:MenuItem Text="Panel Administrador">
                             <asp:MenuItem Text="Información">
-                                <asp:MenuItem NavigateUrl="~/CosasAdmin/DelBuscarNoticia.aspx" Text="Editar las noticias"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/CosasAdmin/DelBuscarNoticia.aspx" Text="Eliminar noticia"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/CosasAdmin/CrearNoticia.aspx" Text="Subir una noticia"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/CosasAdmin/AgregarAutor.aspx" Text="Agregar Autores"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/CosasAdmin/AutoresVer.aspx" Text="Editar Autores"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Donaciones">
                                  <asp:MenuItem NavigateUrl="~/CosasAdmin/ListaDonacion.aspx" Text="Revisar donaciones"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Administradores">
+                                 <asp:MenuItem NavigateUrl="~/CosasAdmin/CrudAdmin.aspx" Text="Administradores"></asp:MenuItem>
                             </asp:MenuItem>
                         </asp:MenuItem>
                     </Items>

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ProyectoProgramacion.Controladores;
 using ProyectoProgramacion.Modelo;
+using System.Drawing;
 
 
 namespace ProyectoProgramacion.CosasAdmin
@@ -14,6 +15,7 @@ namespace ProyectoProgramacion.CosasAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            validarLogin();
             if (!IsPostBack)
             {
                 CargarDrp();
@@ -47,14 +49,13 @@ namespace ProyectoProgramacion.CosasAdmin
         // Cargando las personas creadas por el administrador
         public void CargarDrp()
         {
-
             DrpPersonas.DataSource = from p in PersonaController.GetAllPersona()
                                   select new
                                   {
-                                      nombre = p.nombre + " " + p.apellido,
-                                      id_persona = p.id_persona
+                                      nombre = p.id_persona + ".- " + p.nombre + " " + p.apellido,
+                                      id = p.id_persona
                                   };
-            DrpPersonas.DataValueField = "id_persona";
+            DrpPersonas.DataValueField = "id";
             DrpPersonas.DataTextField = "Nombre";
             DrpPersonas.DataBind();
         }
@@ -65,6 +66,50 @@ namespace ProyectoProgramacion.CosasAdmin
             System.Threading.Thread.Sleep(5000);
             LbMensaje.Text = AutorController.AddAutor(DrpPersonas.SelectedValue);
             Response.Redirect("CrearNoticia.aspx");
+        }
+
+        protected void LnkNuevo_Click(object sender, EventArgs e)
+        {
+            if (LnkVer.Text.Equals("Agregar nueva persona"))
+            {
+                PanelPersona.Visible = true;
+                TxtNombre.Visible = true;
+                TxtNombre.Enabled = true;
+                TxtRut.Enabled = true;
+                TxtRut.Visible = true;
+                TxtApellido.Visible = true;
+                TxtApellido.Enabled = true;
+                BtnCrearPersona.Visible = true;
+                LnkVer.Text = "Cancelar";
+            }
+            else
+            {
+                PanelPersona.Visible = false;
+                TxtNombre.Visible = false;
+                TxtNombre.Enabled = false;
+                TxtRut.Enabled = false;
+                TxtRut.Visible = false;
+                TxtApellido.Visible = false;
+                TxtApellido.Enabled = false;
+                BtnCrearPersona.Visible = false;
+                LnkVer.Text = "Agregar nueva persona";
+            }
+        }
+
+        protected void BtnCrearPersona_Click(object sender, EventArgs e)
+        {
+            LbMensaje2.Text = PersonaController.AddPersona(TxtNombre.Text, TxtApellido.Text, TxtRut.Text);
+            Console.WriteLine(LbMensaje2.Text);
+            System.Threading.Thread.Sleep(5000);
+            Response.Redirect("~/CosasAdmin/AgregarAutor.aspx");
+
+        }
+
+        protected void DelPersona(object sender, EventArgs e)
+        {
+            LbMensaje.Text = PersonaController.RemovePersona(DrpPersonas.SelectedValue);
+            System.Threading.Thread.Sleep(5000);
+            Response.Redirect("~/CosasAdmin/AgregarAutor.aspx");
         }
     }
 }

@@ -29,7 +29,7 @@ namespace ProyectoProgramacion
             //Método validación de Rol
             if (administradores.rol.id_rol == 1)
             {
-                LnkUser.Text = administradores.Persona.nombre+ " " + administradores.Persona.apellido + " (" + administradores.rol.nombre + ")" + " ( Su RUT es" + administradores.Persona.rut + ")";
+                LnkUser1.Text = administradores.Persona.nombre+ " " + administradores.Persona.apellido + " (" + administradores.rol.nombre + ")" + " ( Su RUT es " + administradores.Persona.rut + ")";
             }
             else
             {

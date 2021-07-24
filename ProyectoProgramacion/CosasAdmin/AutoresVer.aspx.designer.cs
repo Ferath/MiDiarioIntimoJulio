@@ -78,6 +78,15 @@ namespace ProyectoProgramacion.CosasAdmin
         protected global::System.Web.UI.WebControls.TextBox TxtRut;
 
         /// <summary>
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
         /// Control LbId.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace ProyectoProgramacion.CosasAdmin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnModificar;
+
+        /// <summary>
+        /// Control BtnEliminarPersona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEliminarPersona;
 
         /// <summary>
         /// Control LbMensaje2.

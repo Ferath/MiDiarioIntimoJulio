@@ -30,7 +30,7 @@ namespace ProyectoProgramacion.Controladores
             };
             cnx.Persona.Add(persona);
             cnx.SaveChanges();
-            return "Donacion realizada";
+            return "Persona agregada";
         }
 
         // Buscar
@@ -48,11 +48,11 @@ namespace ProyectoProgramacion.Controladores
         }
 
         // Eliminar una Persona
-        public static string RemovePersona(string id)
+        public static string RemovePersona(string id_persona)
         {
-            Persona persona = cnx.Persona.Find(int.Parse(id));
+            Persona persona = cnx.Persona.Find(int.Parse(id_persona));
             cnx.Persona.Remove(persona);
-
+            cnx.SaveChanges();
             return "Persona eliminada";
         }
 

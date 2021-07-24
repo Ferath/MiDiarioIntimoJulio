@@ -7,30 +7,21 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoProgramacion.Modelo
+namespace ProyectoProgramacion.CosasAdmin
 {
 
 
-    public partial class Login
+    public partial class CrudAdmin
     {
 
         /// <summary>
-        /// Control TxtRut.
+        /// Control TxtUsername.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtRut;
-
-        /// <summary>
-        /// Control RegularExpressionValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.TextBox TxtUsername;
 
         /// <summary>
         /// Control TxtPassword.
@@ -42,22 +33,22 @@ namespace ProyectoProgramacion.Modelo
         protected global::System.Web.UI.WebControls.TextBox TxtPassword;
 
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control DrpPersonas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.DropDownList DrpPersonas;
 
         /// <summary>
-        /// Control BrnLogin.
+        /// Control BtnAgregarAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BrnLogin;
+        protected global::System.Web.UI.WebControls.Button BtnAgregarAutor;
 
         /// <summary>
         /// Control LbMensaje.

@@ -76,12 +76,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Testeo5.mdf" />
-    <Content Include="App_Data\Testeo5_log.ldf">
-      <DependentUpon>Testeo5.mdf</DependentUpon>
+    <Content Include="App_Data\MiDiarioIntimoBaseDatos.mdf" />
+    <Content Include="App_Data\MiDiarioIntimoBaseDatos_log.ldf">
+      <DependentUpon>MiDiarioIntimoBaseDatos.mdf</DependentUpon>
     </Content>
     <Content Include="CosasAdmin\AgregarAutor.aspx" />
     <Content Include="CosasAdmin\AutoresVer.aspx" />
+    <Content Include="CosasAdmin\CrudAdmin.aspx" />
     <Content Include="IndexAdmin.aspx" />
     <Content Include="CosasAdmin\CrearNoticia.aspx" />
     <Content Include="CosasAdmin\DelBuscarNoticia.aspx" />
@@ -107,6 +108,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\Encrypt.cs" />
     <Compile Include="Controladores\PersonaController.cs" />
     <Compile Include="CosasAdmin\AgregarAutor.aspx.cs">
       <DependentUpon>AgregarAutor.aspx</DependentUpon>
@@ -121,6 +123,13 @@
     </Compile>
     <Compile Include="CosasAdmin\AutoresVer.aspx.designer.cs">
       <DependentUpon>AutoresVer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CosasAdmin\CrudAdmin.aspx.cs">
+      <DependentUpon>CrudAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CosasAdmin\CrudAdmin.aspx.designer.cs">
+      <DependentUpon>CrudAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexAdmin.aspx.cs">
       <DependentUpon>IndexAdmin.aspx</DependentUpon>

@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminNav.Master" AutoEventWireup="true" CodeBehind="IndexAdmin.aspx.cs" Inherits="ProyectoProgramacion.Administrador1" %>
+﻿<%@ Page Title="Inicio administrador" Language="C#" MasterPageFile="~/AdminNav.Master" AutoEventWireup="true" CodeBehind="IndexAdmin.aspx.cs" Inherits="ProyectoProgramacion.Administrador1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <asp:LinkButton ID="LnkUser" runat="server">LinkButton</asp:LinkButton>
+    <asp:Label ID="LnkUser1" runat="server" Text=""></asp:Label>  
 
 </asp:Content>

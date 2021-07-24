@@ -17,10 +17,6 @@ namespace ProyectoProgramacion.CosasAdmin
 
         }
 
-        protected void TxtBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -56,6 +52,7 @@ namespace ProyectoProgramacion.CosasAdmin
                 TxtNombre.Enabled = true;
                 TxtApellido.Enabled = true;
                 BtnModificar.Visible = true;
+                BtnEliminarPersona.Visible = true;
                 LnkEditar.Text = "Cancelar";
             }
             else
@@ -63,6 +60,7 @@ namespace ProyectoProgramacion.CosasAdmin
                 TxtNombre.Enabled = false;
                 TxtApellido.Enabled = false;
                 BtnModificar.Visible = false;
+                BtnEliminarPersona.Visible = false;
                 LnkEditar.Text = "Modificar";
             }
         }
@@ -78,6 +76,12 @@ namespace ProyectoProgramacion.CosasAdmin
         protected void LnkNuevo_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarAutor.aspx");
+        }
+
+        protected void DelPersona(object sender, EventArgs e)
+        {
+            Autor autor = AutorController.FindAutor(TxtBuscar.Text);
+            LbMensaje2.Text = AutorController.RemoveAutor(autor.id.ToString());
         }
     }
 }
