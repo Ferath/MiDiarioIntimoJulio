@@ -4,23 +4,37 @@
     --Texto: black;
     --Fondo: #eee4e8;
     --TextoBlanco: white;
+    --AdminColor: #7dd3ef;
+    --MedidaPadding: 15px;
 }
 
 body {
     background-color: var(--Fondo);
 }
 
-footer {
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    padding: 15px;
     background-color: var(--Principal);
     color: var(--TextoBlanco);
     text-align: center;
     cursor: pointer;
 }
 
+.footerAdmin {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: var(--MedidaPadding);
+    background-color: var(--AdminColor);
+    color: var(--Texto);
+    text-align: center;
+    cursor: pointer;
+}
 /*Los a del nav*/
 a.level1.static {
     border: none;

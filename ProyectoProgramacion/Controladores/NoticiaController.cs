@@ -13,15 +13,14 @@ namespace ProyectoProgramacion.Controladores
 
         // Metodos de clase
         //Agregar
-        public static string AddNoticia(string titulo_noticia, string fecha_noticia, string id, string descripcion_noticia)
+        public static string AddNoticia(string titulo_noticia, string fecha_noticia, string autor, string descripcion_noticia)
         {
-            Autor autor = cnx.Autor.Find(int.Parse(id));
 
             Noticia noticia = new Noticia()
             {
                 titulo_noticia = titulo_noticia,
                 fecha_noticia = DateTime.Parse(fecha_noticia),
-                autor = int.Parse(id),
+                autor = int.Parse(autor),
                 descripcion_noticia = descripcion_noticia,
 
             };

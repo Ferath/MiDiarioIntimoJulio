@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MiDiarioIntimoBaseDatosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MiDiarioIntimoBD.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administradores">
           <Key>
             <PropertyRef Name="id_admin" />
@@ -44,7 +44,6 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="titulo_noticia" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="fecha_noticia" Type="date" Nullable="false" />
-          <Property Name="imagen_noticia" Type="int" Nullable="false" />
           <Property Name="autor" Type="int" Nullable="false" />
           <Property Name="descripcion_noticia" Type="varchar" MaxLength="8000" Nullable="false" />
         </EntityType>
@@ -134,7 +133,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MiDiarioIntimoBaseDatosModelStoreContainer">
+        <EntityContainer Name="MiDiarioIntimoBDStoreContainer">
           <EntitySet Name="Administradores" EntityType="Self.Administradores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Autor" EntityType="Self.Autor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Donacion" EntityType="Self.Donacion" Schema="dbo" store:Type="Tables" />
@@ -167,7 +166,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MiDiarioIntimoBaseDatosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MiDiarioIntimoBD" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Administradores">
           <Key>
             <PropertyRef Name="id_admin" />
@@ -213,7 +212,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="titulo_noticia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fecha_noticia" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="imagen_noticia" Type="Int32" Nullable="false" />
           <Property Name="autor" Type="Int32" Nullable="false" />
           <Property Name="descripcion_noticia" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Autor1" Relationship="Self.FK_autor" FromRole="Noticia" ToRole="Autor" />
@@ -341,9 +339,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MiDiarioIntimoBaseDatosModelStoreContainer" CdmEntityContainer="MiDiarioIntimoBDEntities">
+        <EntityContainerMapping StorageEntityContainer="MiDiarioIntimoBDStoreContainer" CdmEntityContainer="MiDiarioIntimoBDEntities">
           <EntitySetMapping Name="Administradores">
-            <EntityTypeMapping TypeName="MiDiarioIntimoBaseDatosModel.Administradores">
+            <EntityTypeMapping TypeName="MiDiarioIntimoBD.Administradores">
               <MappingFragment StoreEntitySet="Administradores">
                 <ScalarProperty Name="id_admin" ColumnName="id_admin" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -354,7 +352,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Autor">
-            <EntityTypeMapping TypeName="MiDiarioIntimoBaseDatosModel.Autor">
+            <EntityTypeMapping TypeName="MiDiarioIntimoBD.Autor">
               <MappingFragment StoreEntitySet="Autor">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Fk_Persona" ColumnName="Fk_Persona" />
@@ -362,7 +360,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Donacion">
-            <EntityTypeMapping TypeName="MiDiarioIntimoBaseDatosModel.Donacion">
+            <EntityTypeMapping TypeName="MiDiarioIntimoBD.Donacion">
               <MappingFragment StoreEntitySet="Donacion">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="monto_donacion" ColumnName="monto_donacion" />
@@ -371,7 +369,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Metodopago">
-            <EntityTypeMapping TypeName="MiDiarioIntimoBaseDatosModel.Metodopago">
+            <EntityTypeMapping TypeName="MiDiarioIntimoBD.Metodopago">
               <MappingFragment StoreEntitySet="Metodopago">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
@@ -379,19 +377,18 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Noticia">
-            <EntityTypeMapping TypeName="MiDiarioIntimoBaseDatosModel.Noticia">
+            <EntityTypeMapping TypeName="MiDiarioIntimoBD.Noticia">
               <MappingFragment StoreEntitySet="Noticia">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="titulo_noticia" ColumnName="titulo_noticia" />
                 <ScalarProperty Name="fecha_noticia" ColumnName="fecha_noticia" />
-                <ScalarProperty Name="imagen_noticia" ColumnName="imagen_noticia" />
                 <ScalarProperty Name="autor" ColumnName="autor" />
                 <ScalarProperty Name="descripcion_noticia" ColumnName="descripcion_noticia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Persona">
-            <EntityTypeMapping TypeName="MiDiarioIntimoBaseDatosModel.Persona">
+            <EntityTypeMapping TypeName="MiDiarioIntimoBD.Persona">
               <MappingFragment StoreEntitySet="Persona">
                 <ScalarProperty Name="id_persona" ColumnName="id_persona" />
                 <ScalarProperty Name="rut" ColumnName="rut" />
@@ -401,7 +398,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="rol">
-            <EntityTypeMapping TypeName="MiDiarioIntimoBaseDatosModel.rol">
+            <EntityTypeMapping TypeName="MiDiarioIntimoBD.rol">
               <MappingFragment StoreEntitySet="rol">
                 <ScalarProperty Name="id_rol" ColumnName="id_rol" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />

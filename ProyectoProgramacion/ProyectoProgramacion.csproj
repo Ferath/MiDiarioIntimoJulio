@@ -76,9 +76,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MiDiarioIntimoBaseDatos.mdf" />
-    <Content Include="App_Data\MiDiarioIntimoBaseDatos_log.ldf">
-      <DependentUpon>MiDiarioIntimoBaseDatos.mdf</DependentUpon>
+    <Content Include="App_Data\BDProyecto.mdf" />
+    <Content Include="App_Data\BDProyecto_log.ldf">
+      <DependentUpon>BDProyecto.mdf</DependentUpon>
     </Content>
     <Content Include="CosasAdmin\AgregarAutor.aspx" />
     <Content Include="CosasAdmin\AutoresVer.aspx" />

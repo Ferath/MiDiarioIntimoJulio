@@ -17,7 +17,6 @@ namespace ProyectoProgramacion.Modelo
         public int id { get; set; }
         public string titulo_noticia { get; set; }
         public System.DateTime fecha_noticia { get; set; }
-        public int imagen_noticia { get; set; }
         public int autor { get; set; }
         public string descripcion_noticia { get; set; }
     
