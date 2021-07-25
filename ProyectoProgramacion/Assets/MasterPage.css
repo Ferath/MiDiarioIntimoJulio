@@ -70,3 +70,21 @@ a:hover {
     margin: auto;
     margin-top: 10%;
 }
+
+/* Container de noticias */
+.ContenedorNoticias {
+    margin-top: 15px;
+    text-align: justify;
+}
+
+.ContenedorNoticias h2{
+    margin-left:35px;
+}
+
+.ContenedorNoticias img{
+    margin-left: 25px;
+}
+
+.date-con col text-end{
+    text-align:center;
+}
